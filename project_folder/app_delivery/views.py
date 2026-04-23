@@ -14,3 +14,19 @@ def login(request):
 
 def aboutus(request):
     return render(request, 'app_delivery/main/aboutus.html')
+
+
+def cards_dinamicos(request):
+    pizzas = [
+        {
+            'nome': 'Calabresa especial',
+            'descricao': 'Molho de tomate artesanal, mussarela premium e calabresa fatiada.',
+            'preco': '45.00',
+            'imagem': 'https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500',
+            'tag': 'Mais Pedida'
+        }
+
+
+
+    ]
+    return render(request, 'carousel.html', {'pizzas': pizzas})

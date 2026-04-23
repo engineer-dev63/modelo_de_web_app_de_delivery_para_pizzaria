@@ -1,0 +1,27 @@
+<div class="container my-5">
+    <h2 class="text-center mb-4 text-vinho fw-bold">Sugestões do Chef</h2>
+    <div class="row">
+
+        {% for pizza in pizzas %}
+        <div class="col-md-4 mb-4">
+            <div class="card pizza-card h-100 shadow-sm border-0">
+                <img src="{{ pizza.imagem }}" class="card-img-top" alt="{{ pizza.nome }}" style="height: 200px; object-fit: cover;">
+                
+                <div class="card-body text-center d-flex flex-column">
+                    <h5 class="card-title fw-bold text-vinho">{{ pizza.nome }}</h5>
+                    
+                    <p class="card-text text-muted small">{{ pizza.descricao }}</p>
+                    
+                    <div class="mt-auto">
+                        <h6 class="fw-bold" style="color: var(--vixe-vinho)">R$ {{ pizza.preco }}</h6>
+                        
+                        <a href="#" class="btn btn-vixe-pedir w-100 rounded-pill">
+                            Adicionar ao Carrinho
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        </div>
+</div>

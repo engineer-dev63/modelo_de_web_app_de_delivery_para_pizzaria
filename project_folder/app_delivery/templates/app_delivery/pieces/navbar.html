@@ -1,17 +1,66 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">🍕 PIZZARIA DELÍCIA</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Cardápio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Sobre Nós</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
-                    <li class="nav-item"><a class="nav-link btn btn-warning text-dark ms-lg-2" href="#">🛒 Carrinho</a></li>
+{% load static %}
+
+
+
+<nav class="navbar navbar-expand-lg navbar-dark navbar-vixe sticky-top">
+    <div class="container">
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <a class="navbar-brand mx-auto mx-lg-0" href="/">
+            <img src="{% static 'app_delivery\img\logo_vixe.png' %}" alt="Vixe" style="height: 80px;">
+        </a>
+
+        <div class="d-flex align-items-center order-lg-last">
+            
+            <form class="search-box d-none d-md-block">
+                <i class="bi bi-search search-icon"></i>
+                <input type="text" class="search-input" placeholder="Buscar...">
+            </form>
+
+            <a href="/carrinho" class="text-warning position-relative me-3 fs-4">
+                <i class="bi bi-cart3"></i>
+                <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-white text-danger" style="font-size: 0.6rem;">
+                    2
+                </span>
+            </a>
+
+            <a href="/cardapio" class="btn btn-vixe-pedir d-none d-sm-block">
+                PEDIR AGORA
+            </a>
+
+            <a href="/perfil" class="nav-account-link d-flex flex-column align-items-center">
+                <i class="bi bi-person-circle account-icon"></i>
+                <span class="account-text d-none d-md-block">Minha Conta</span>
+            </a>
+        </div>
+
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title text-warning" id="offcanvasNavbarLabel">VIXE PIZZARIA</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/cardapio">Cardápio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/sobre">Sobre nós</a>
+                    </li>
                 </ul>
+                
+                <form class="d-flex mt-4 d-md-none">
+                    <input class="form-control me-2 rounded-pill" type="search" placeholder="Buscar pizza...">
+                    <button class="btn btn-warning rounded-pill" type="submit">Ir</button>
+                </form>
             </div>
         </div>
-    </nav>
+
+    </div>
+</nav>

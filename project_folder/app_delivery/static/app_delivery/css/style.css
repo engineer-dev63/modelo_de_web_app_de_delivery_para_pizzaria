@@ -1,22 +1,229 @@
 /* Configurações Gerais */
 body {
     font-family: 'Poppins', sans-serif;
-    color: #333;
+    color: #1d1681;
+
+
 }
 
-/* Navbar Personalizada */
-.navbar-brand {
-    font-weight: bold;
-    color: #e74c3c !important;
-    font-size: 1.5rem;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:root {
+    --vixe-vinho: #6b0909;
+    --vixe-vinho-dark: #4a0606;
+    --vixe-amarelo: #ffc107;
+    --vixe-branco: #ffffff;
 }
+
+/* Navbar Base */
+.navbar-vixe {
+    /* background: linear-gradient(90deg, var(--vixe-vinho) 0%, var(--vixe-vinho-dark) 100%) !important; */
+    background-color: #6e0001;
+    border-bottom: 3px solid var(--vixe-amarelo);
+    padding: 0.6rem 0;
+}
+
+/* Estilo do Menu Lateral (Offcanvas) */
+.offcanvas {
+    background-color: var(--vixe-vinho) !important;
+    color: white !important;
+    border-left: 3px solid var(--vixe-amarelo);
+}
+
+.offcanvas-header {
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.offcanvas .nav-link {
+    color: white !important;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.offcanvas .nav-link:hover {
+    color: var(--vixe-amarelo) !important;
+}
+
+/* Barra de Pesquisa */
+.search-box {
+    position: relative;
+    margin: 0 15px;
+}
+
+.search-input {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    padding: 5px 15px 5px 35px;
+    color: white;
+    width: 150px;
+    transition: all 0.3s;
+}
+
+.search-input:focus {
+    width: 200px;
+    background: white;
+    color: black;
+    outline: none;
+    box-shadow: 0 0 10px var(--vixe-amarelo);
+}
+
+.search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--vixe-amarelo);
+}
+
+/* Botão Pedir Agora */
+.btn-vixe-pedir {
+    background-color: var(--vixe-amarelo);
+    color: var(--vixe-vinho) !important;
+    font-weight: 800;
+    border-radius: 50px;
+    padding: 8px 20px;
+    border: none;
+    transition: 0.3s;
+}
+
+/* Link Minha Conta (Último item) */
+.nav-account-link {
+    color: white !important;
+    text-decoration: none !important;
+    margin-left: 20px;
+}
+
+.account-icon {
+    color: var(--vixe-amarelo) !important;
+    font-size: 1.6rem;
+}
+
+.account-text {
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+/* Ajuste para o botão sanduíche */
+.navbar-toggler {
+    color: var(--vixe-amarelo) !important;
+    border: 1px solid var(--vixe-amarelo) !important;
+}
+
+
+
+/* 1. Espaçamento entre os links do CENTRO */
+.navbar-vixe .nav-item {
+    margin: 0 15px; /* Aumenta o espaço entre Início, Cardápio, etc. */
+}
+
+/* 2. Espaçamento entre os itens da DIREITA (Busca, Carrinho, Botão, Conta) */
+.nav-actions-container {
+    gap: 30px !important; /* Esse é o "espaço mágico" que separa os ícones e o botão */
+}
+
+/* 3. Espaçamento específico para o último item (Minha Conta) */
+.link-conta-vixe {
+    margin-left: 10px; /* Um fôlego extra além do gap */
+}
+
+/* 4. Ajuste na largura da busca para não "apertar" os outros */
+.search-vixe {
+    width: 180px; 
+}
+
+
+
+
+
+/* Links do Menu Central */
+.navbar-vixe .nav-link {
+    font-size: 0.9rem !important; /* Diminuído (o padrão geralmente é 1rem) */
+    font-weight: 700;
+    letter-spacing: 1.5px; /* Espaçamento entre letras para elegância */
+    text-transform: uppercase;
+    color: var(--vixe-branco) !important;
+}
+
+/* Links dentro da Aba Lateral (Mobile) */
+/* Aqui podemos manter um pouco maior para facilitar o toque com o dedo */
+.offcanvas-vixe .nav-link {
+    font-size: 0.9rem !important;
+    letter-spacing: 1px;
+}
+
+/* Texto "Minha Conta" embaixo do ícone */
+.link-conta-vixe span {
+    font-size: 0.55rem !important; /* Diminuído para não competir com o ícone */
+    font-weight: 700;
+    margin-top: 3px;
+}
+
+/* Texto dentro do Botão Pedir Agora */
+.btn-vixe-header {
+    font-size: 0.5rem !important; /* Alinhado com o tamanho dos nav-links */
+    letter-spacing: 0.5px;
+}
+
+
+
+
+
+    
+
+
+
+
+
+
 
 /* Cards de Pizza */
 .pizza-card {
     border: none;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
+    /* MÁGICA 1: Força o card a ser um container Flexbox vertical */
+    display: flex;
+    flex-direction: column;
 }
+
+
+.pizza-card img{
+    width: 100%;
+    /* MÁGICA 2: Define a altura fixa para TODAS as imagens */
+    height: 220px; 
+    overflow: hidden;
+    /* MÁGICA 3: O pulo do gato */
+    /* Faz a imagem cobrir a área sem distorcer (corta as bordas se necessário) */
+    object-fit: cover; 
+    
+    /* Garante que o centro da pizza seja o foco */
+    object-position: center;
+
+}
+
+
+
+
+
+
 
 .pizza-card:hover {
     transform: translateY(-10px);
@@ -37,11 +244,8 @@ body {
     transition: 0.3s;
 }
 
-/* Garante que imagens de produtos nunca transbordem */
-img {
-    max-width: 100%;
-    height: auto;
-}
+
+
 
 /* Ajuste para ecrãs muito pequenos (iPhone SE, etc) */
 @media (max-width: 350px) {
@@ -54,4 +258,68 @@ img {
 .container {
     padding-left: 20px;
     padding-right: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- AJUSTES DE RESPONSIVIDADE (SEM ALTERAR O ORIGINAL) --- */
+
+/* 1. Garante que nada saia da largura da tela */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* 2. Ajuste na Barra de Busca para telas menores */
+@media (max-width: 991px) {
+    .search-vixe {
+        width: 100%; /* Ocupa a largura disponível no mobile */
+        max-width: 200px;
+        margin: 10px 0;
+    }
+
+    /* Ajusta o container de ações para não quebrar o layout */
+    .nav-actions-container {
+        gap: 15px !important; /* Diminui o espaço entre ícones no mobile */
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    /* Centraliza os itens na Navbar quando colapsada */
+    .navbar-vixe .nav-item {
+        margin: 5px 0;
+        text-align: center;
+    }
+}
+
+/* 3. Ajuste nos Cards de Pizza */
+@media (max-width: 576px) {
+    .pizza-card img {
+        height: 180px; /* Diminui um pouco a altura da imagem em celulares pequenos */
+    }
+    
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+/* 4. Correção para o botão 'Pedir Agora' não esticar demais */
+.btn-vixe-header {
+    white-space: nowrap; /* Impede que o texto do botão quebre em duas linhas */
+    display: inline-block;
+}
+
+/* 5. Prevenção de overflow global */
+* {
+    box-sizing: border-box;
 }
