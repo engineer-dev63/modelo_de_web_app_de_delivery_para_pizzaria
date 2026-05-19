@@ -17,6 +17,7 @@ Including another URLconf
 
 from django.urls import path
 from . import views
+from . import views  # Importa suas views
 
 urlpatterns = [
     path('', views.home),
@@ -24,6 +25,8 @@ urlpatterns = [
     path('menu/', views.menu),
     path('login/', views.login),
     path('aboutus/', views.aboutus),
+    # ADICIONE OU CORRIJA ESTA LINHA:
+    path('estoque/', views.estoque, name='estoque'),
 
 ]
 

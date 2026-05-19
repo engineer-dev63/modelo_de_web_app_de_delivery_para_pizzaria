@@ -15,6 +15,48 @@ body {
 
 
 
+/* Deixa as setas um pouco mais visíveis */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    padding: 10px;
+}
+
+
+
+
+
+
+/* Garante que as imagens do carrossel fiquem perfeitas */
+.img-carousel {
+    height: 400px; /* Mantém a altura da faixa do seu layout original */
+    object-fit: cover; /* Corta as laterais da imagem se a tela for muito fina, mas nunca distorce */
+    object-position: center; /* Mantém o meio da sua arte sempre visível */
+}
+
+/* Deixa as setinhas bonitas e arredondadas sobre a imagem */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+    background-size: 50%;
+}
+
+
+/* Ajuste fino para telas menores (Tablets e Celulares) */
+@media (max-width: 768px) {
+    .img-carousel {
+        /* Diminui a altura em telas menores para ficar proporcional */
+        height: 200px; 
+    }
+}
+
+
 
 
 
@@ -26,6 +68,7 @@ body {
     --vixe-vinho-dark: #4a0606;
     --vixe-amarelo: #ffc107;
     --vixe-branco: #ffffff;
+    --vixe-rosa: #e74c3c;
 }
 
 /* Navbar Base */
@@ -91,6 +134,43 @@ body {
     transform: translateY(-50%);
     color: var(--vixe-amarelo);
 }
+
+
+
+/* Estilo para a barra compacta */
+.search-pill-group .form-control,
+.search-pill-group .input-group-text {
+    border-color: #dee2e6;
+    background-color: #ffffff;
+}
+
+/* Remove a borda azul ao clicar */
+.search-pill-group .form-control:focus {
+    border-color: #dee2e6;
+    box-shadow: none;
+}
+
+/* Botão Danger customizado */
+.search-pill-group .btn-danger {
+    background-color: #e74c3c;
+    border-color: #e74c3c;
+    transition: background-color 0.2s;
+}
+
+.search-pill-group .btn-danger:hover {
+    background-color: #c0392b;
+    border-color: #c0392b;
+}
+
+
+
+
+
+
+
+
+
+
 
 /* Botão Pedir Agora */
 .btn-vixe-pedir {
@@ -192,38 +272,59 @@ body {
 
 
 
+/* ;;;;;;;;;;;;;;;;;;; */
+
+
 
 
 /* Cards de Pizza */
 .pizza-card {
     border: none;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-    /* MÁGICA 1: Força o card a ser um container Flexbox vertical */
+    border-radius: 12px; /* Bordas mais suaves e modernas */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05); /* Sombra mais sutil e profissional */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
+    overflow: hidden; /* Garante que a imagem siga o arredondado do card */
 }
 
-
-.pizza-card img{
+.pizza-card img {
     width: 100%;
-    /* MÁGICA 2: Define a altura fixa para TODAS as imagens */
     height: 220px; 
-    overflow: hidden;
-    /* MÁGICA 3: O pulo do gato */
-    /* Faz a imagem cobrir a área sem distorcer (corta as bordas se necessário) */
     object-fit: cover; 
-    
-    /* Garante que o centro da pizza seja o foco */
     object-position: center;
-
 }
 
+/* Destaque para o preço se destacar muito mais */
+.pizza-card .fs-3 {
+    font-size: 1.75rem !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.5px;
+}
 
+/* Botão mais moderno */
+.pizza-card .btn-danger {
+    background-color: #e74c3c;
+    border-color: #e74c3c;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+    transition: all 0.2s ease;
+}
 
+.pizza-card .btn-danger:hover {
+    background-color: #c0392b;
+    border-color: #c0392b;
+    transform: scale(1.02);
+}
 
+/* Efeito de flutuar ao passar o mouse */
+.pizza-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+}
 
-
+/* ;;;;;;;;;;;;;;;;;;;;;;;;; */
 
 .pizza-card:hover {
     transform: translateY(-10px);

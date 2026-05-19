@@ -15,9 +15,16 @@
 
         <div class="d-flex align-items-center order-lg-last">
             
-            <form class="search-box d-none d-md-block">
-                <i class="bi bi-search search-icon"></i>
-                <input type="text" class="search-input" placeholder="Buscar...">
+
+            <form method="GET" action="{% url 'estoque' %}" class="d-none d-md-block" style="max-width: 280px; width: 100%;">
+                <div class="input-group search-pill-group input-group-sm"> <span class="input-group-text bg-white border-end-0 rounded-start-pill ps-3">
+                        <i class="bi bi-search text-muted" style="font-size: 0.85rem;"></i>
+                    </span>
+                    
+                    <input type="text" name="query" class="form-control border-start-0 shadow-none py-1 fs-7" placeholder="Buscar..." value="{{ request.GET.query }}" style="font-size: 0.9rem;">
+                    
+                    <button class="btn btn-danger rounded-end-pill px-3 fw-bold fs-7" type="submit" style="font-size: 0.85rem;">OK</button>
+                </div>
             </form>
 
             <a href="/carrinho" class="text-warning position-relative me-3 fs-4">
